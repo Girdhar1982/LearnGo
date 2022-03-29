@@ -1,10 +1,18 @@
-package main   //first line must be package name and file name must end with  .go
+package main //first line must be package name and file name must end with  .go
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func main() {
-value1,value2:=returntwostrings(); //assigning values from function retruning two values
-fmt.Println(value2,value1);
+	//excerciseVariableAndPointers()
+}
+
+func excerciseVariableAndPointers(){
+	value1,value2:=returntwostrings(); //assigning values from function retruning two values
+	fmt.Println(value2,value1);
+	pointers();
 }
 
 func first() string{
@@ -22,4 +30,18 @@ func first() string{
 func returntwostrings() (string,string){ //in go function can retrun two values
 valuefromfirst:=first() ;
 return valuefromfirst, "secondstring"
+}
+
+func pointers(){
+mystring:="Green"
+log.Println("before: mystring is set to ", mystring)
+changeUsingPointer(&mystring) //& is added in front to take the memory pointer
+log.Println("after: mystring is set to ", mystring)
+
+}
+
+func changeUsingPointer(s *string){ //this function takes memory reference
+log.Println("memory address of RAM is shown here - ",s);
+newValue:="Red"
+*s=newValue;
 }
