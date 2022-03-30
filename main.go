@@ -3,11 +3,34 @@ package main //first line must be package name and file name must end with  .go
 import (
 	"fmt"
 	"log"
+	"time"
 )
 
 func main() {
 	//excerciseVariableAndPointers()
+//	variablelocal()
+usingStruct()
 }
+var s = "seven" //go is smart enough to know it is string type variable; this variable is outside all the functions so value is available everywhere (global)
+type User struct {
+	FirstName string
+	LastName string
+	PhoneNumber string
+	Age int
+	BirthDate time.Time
+} //struct type is used to store data about an object
+
+func variablelocal(){
+	var s2 = "six" //local variable to function
+	log.Println("s is",s); //display global variable
+	log.Println("s2 is",s2); // display local variable
+}
+
+func usingStruct(){ //if function name is starting with lowercase letter function is private to the package
+	user := User{	FirstName: "Manish",LastName: "Girdhar"}
+	log.Println(user.FirstName,user.LastName)
+}
+
 
 func excerciseVariableAndPointers(){
 	value1,value2:=returntwostrings(); //assigning values from function retruning two values
