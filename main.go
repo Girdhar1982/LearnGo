@@ -3,6 +3,7 @@ package main //first line must be package name and file name must end with  .go
 import (
 	"fmt"
 	"log"
+	"sort"
 	"time"
 )
 
@@ -10,7 +11,20 @@ func main() {
 	//excerciseVariableAndPointers()
 //	variablelocal()
 //usingStruct()
+//usingMap()
+usingSlices()
 }
+
+func usingMap(){
+tag := make(map[string]string)
+tag["name"]="manish"
+tag["environment"]="prod"
+log.Println(tag["name"])
+usersMap := make(map[string]User)
+usersMap["user1"]=User{FirstName: "Manish",LastName: "Girdhar"}
+log.Println(usersMap["user1"])
+}
+
 var s = "seven" //go is smart enough to know it is string type variable; this variable is outside all the functions so value is available everywhere (global)
 type User struct {
 	FirstName string
@@ -35,7 +49,16 @@ func usingStruct(){ //if function name is starting with lowercase letter functio
 	user2:=User{FirstName: "Nisha",LastName: "Girdhar",PhoneNumber: "0406199999"}
 	log.Println(user2.printFirstName(),user2.LastName)
 }
-
+func usingSlices(){
+var myArrayorSlice []string
+myArrayorSlice=append(myArrayorSlice, "Javin")
+myArrayorSlice=append(myArrayorSlice, "Manish")
+myArrayorSlice=append(myArrayorSlice, "Nisha")
+sorted:=sort.StringSlice(myArrayorSlice)
+log.Println(myArrayorSlice,sorted)
+numbers:=[]int{1,7,2,8,5}
+log.Println(numbers[0:4])
+}
 
 func excerciseVariableAndPointers(){
 	value1,value2:=returntwostrings(); //assigning values from function retruning two values
