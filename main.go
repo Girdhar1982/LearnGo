@@ -9,7 +9,7 @@ import (
 func main() {
 	//excerciseVariableAndPointers()
 //	variablelocal()
-usingStruct()
+//usingStruct()
 }
 var s = "seven" //go is smart enough to know it is string type variable; this variable is outside all the functions so value is available everywhere (global)
 type User struct {
@@ -19,7 +19,9 @@ type User struct {
 	Age int
 	BirthDate time.Time
 } //struct type is used to store data about an object
-
+func (u *User) printFirstName() string{
+	return u.FirstName;
+	}
 func variablelocal(){
 	var s2 = "six" //local variable to function
 	log.Println("s is",s); //display global variable
@@ -28,7 +30,10 @@ func variablelocal(){
 
 func usingStruct(){ //if function name is starting with lowercase letter function is private to the package
 	user := User{	FirstName: "Manish",LastName: "Girdhar"}
+	user.PhoneNumber="0435899999"
 	log.Println(user.FirstName,user.LastName)
+	user2:=User{FirstName: "Nisha",LastName: "Girdhar",PhoneNumber: "0406199999"}
+	log.Println(user2.printFirstName(),user2.LastName)
 }
 
 
