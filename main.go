@@ -13,7 +13,34 @@ func main() {
 //usingStruct()
 //usingMap()
 //usingSlices()
-usingDecision()
+//usingDecision()
+usingforLoops()
+}
+
+
+func usingforLoops(){
+for i:=0; i<=100; i++{
+i=i+10;
+fmt.Println(i)
+}
+
+animals:=[]string{"dog","cat","horse",
+//"cow","ox","fish",
+"lion"}
+
+for i,_:=range animals{
+	log.Println(i,animals[i])
+}
+for _,animal:=range animals{
+	log.Println(animal)
+}
+
+tags := make(map[string]string)
+tags["name"]="Test"
+tags["enviornment"]="nonprod"
+for key,value:=range tags{
+	log.Println(key,value)
+}
 }
 
 func usingDecision(){
@@ -43,8 +70,7 @@ case "nisha":
 default:
 	log.Println("Hello unknown user ", name)
 }
-
-	}
+}
 
 
 func usingMap(){
