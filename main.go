@@ -12,8 +12,40 @@ func main() {
 //	variablelocal()
 //usingStruct()
 //usingMap()
-usingSlices()
+//usingSlices()
+usingDecision()
 }
+
+func usingDecision(){
+isTrue:=true
+if isTrue {log.Println("Hello ",isTrue)}else{
+	log.Println("Bye ",isTrue)
+}
+
+if isTrue != true {log.Println("Hello ",isTrue)}else{
+	log.Println("Bye ",isTrue)
+}
+num:=5
+name:="manish"
+if isTrue && name == "manish"{log.Println("Hello - ", name)}
+if isTrue && name != "manish"{log.Println("Hello! ", name)}
+if num > 2 && isTrue {log.Println("Hello! -", name)}
+usingSwitch("manish")
+usingSwitch("nisha")
+usingSwitch("manisha")
+}
+func usingSwitch(name string){
+switch(name){
+case "manish":
+	log.Println("Hello ", name)
+case "nisha":
+	log.Println("Hello new user ", name)
+default:
+	log.Println("Hello unknown user ", name)
+}
+
+	}
+
 
 func usingMap(){
 tag := make(map[string]string)
